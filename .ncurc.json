@@ -1,3 +1,14 @@
 {
-  "reject": ["@tanstack/react-query", "eslint", "tsparticles", "eslint", "@headlessui/react"]
+  "reject": [
+    "eslint",
+    "storybook",
+    "@storybook/addon-essentials",
+    "@storybook/addon-interactions",
+    "@storybook/addon-links",
+    "@storybook/blocks",
+    "@storybook/nextjs",
+    "@storybook/react",
+    "@storybook/test-runner",
+    "@storybook/testing-library"
+  ]
 }
