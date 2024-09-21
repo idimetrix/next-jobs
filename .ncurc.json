@@ -1,0 +1,3 @@
+{
+  "reject": ["@tanstack/react-query", "eslint", "tsparticles", "eslint", "@headlessui/react"]
+}
