@@ -1,3 +1,228 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+    --color-black: #000000;
+    --color-white: #ffffff;
+
+    --color-golden-hour: #f2b457;
+    --color-black-wash: #0b0c0f;
+    --color-hooloovoo-blue: #3656ff;
+    --color-nila-blue: #0057ff;
+    --color-lanse-blue: #5249ff;
+    --color-blustering-blue: #3818fc;
+    --color-blue-genie: #6b6bfd;
+    --color-dark-void: #131417;
+    --color-trance: #9097a6;
+    --color-charade: #3b3f45;
+    --color-calla-lily: #E4E8ED;
+    --color-ruined-smores: #0F1114;
+    --color-midnight-magic: #47474a;
+    --color-satin-white: #ced3db;
+    --color-fever: #ed4a4a;
+}
+
+html, body {
+    /* Hide scrollbar for IE, Edge and Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+    background-color: var(--color-black-wash);
+    color: var(--color-white);
+    font-size: 16px;
+    line-height: 1.5;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+    position: relative;
+    font-weight: 400;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    pointer-events: auto !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+    font-feature-settings: normal;
+    font-variation-settings: normal;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-white);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--color-black);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--color-black);
+}
+
+*::selection {
+    color: var(--color-white);
+    background-color: var(--color-hooloovoo-blue);
+}
+
+*:focus {
+    outline: none !important;
+}
+
+select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg aria-hidden='true' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='%23fff' d='M239 401c9.4 9.4 24.6 9.4 33.9 0L465 209c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-175 175L81 175c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9L239 401z'%3E%3C/path%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 20px center;
+    background-size: 16px 16px;
+}
+
+select option[value=""] {
+    color: var(--color-midnight-magic);
+}
+
+select:invalid {
+    color: var(--color-midnight-magic) !important;
+}
+
+#__next {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/*---------------------------------------------------*/
+/*	BG PROGRESS
+/*---------------------------------------------------*/
+
+#nprogress .bar {
+    background: var(--color-hooloovoo-blue);
+}
+
+#nprogress .bar {
+}
+
+/*---------------------------------------------------*/
+/*	CURSOR
+/*---------------------------------------------------*/
+
+.mouse-cursor {
+    position: fixed;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+    border-radius: 50%;
+    transform: translateZ(0);
+}
+
+.cursor-inner {
+    margin-left: -3px;
+    margin-top: -3px;
+    width: 6px;
+    height: 6px;
+    z-index: 10000001;
+    background-color: var(--color-white);
+    transition:
+            width 0.3s ease-in-out,
+            height 0.3s ease-in-out,
+            margin 0.3s ease-in-out,
+            opacity 0.3s ease-in-out;
+}
+
+.cursor-inner.cursor-hover {
+    margin-left: -30px;
+    margin-top: -30px;
+    width: 60px;
+    height: 60px;
+    background-color: var(--color-white);
+    opacity: 0.3;
+}
+
+.cursor-inner.cursor-laser {
+    width: 10px;
+    height: 10px;
+    filter: blur(1.5px);
+    margin-left: -5px;
+    margin-top: -5px;
+}
+
+.cursor-outer {
+    margin-left: -15px;
+    margin-top: -15px;
+    width: 30px;
+    height: 30px;
+    border: 2px solid var(--color-white);
+    box-sizing: border-box;
+    z-index: 10000000;
+    opacity: 0.5;
+    transition: all 0.08s ease-out;
+}
+
+.cursor-outer.cursor-hover {
+    opacity: 0;
+}
+
+.cursor-outer.cursor-laser {
+    width: 78px;
+    height: 78px;
+    background-color: var(--color-white);
+    filter: blur(62px);
+    margin-left: -39px;
+    margin-top: -39px;
+}
+
+/*---------------------------------------------------*/
+/*	TO TOP
+/*---------------------------------------------------*/
+
+.to-top {
+    position: fixed;
+    height: 48px;
+    width: 48px;
+    right: 20px;
+    bottom: 40px;
+    cursor: pointer;
+    border-radius: 50px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(15px);
+    transition: all 200ms linear;
+    color: var(--toTopInnerColor);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 0 0 0 2px var(--toTopOuterColor);
+}
+
+.to-top.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.to-top svg {
+    /*  */
+}
+
+.to-top svg.circle path {
+    transition: stroke-dashoffset 10ms linear 0s;
+    stroke-dasharray: 307.919, 307.919;
+    stroke-dashoffset: 307.919;
+    stroke: var(--toTopInnerColor);
+    stroke-width: 4;
+    fill: transparent;
+}
