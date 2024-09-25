@@ -1,3 +1,5 @@
+"use client";
+
 import { faTriangle } from "@fortawesome/pro-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { HTMLAttributes, useCallback, useEffect, useRef } from "react"
@@ -13,7 +15,7 @@ interface Props extends HTMLAttributes<HTMLButtonElement> {
 export function ToTop({
   offset = 50,
   behavior = "smooth",
-  innerColor = "#3554d1",
+  innerColor = "#4680ff",
   outerColor = "#fff",
   className,
   ...rest
@@ -59,7 +61,7 @@ export function ToTop({
         "--toTopInnerColor": innerColor,
         "--toTopOuterColor": outerColor,
       }}
-      className={cn("to-top z-30", "group-[.hotel]/page:hidden md:group-[.hotel]/page:flex", className)}
+      className={cn("to-top z-30", "", className)}
       onClick={handleClick}
       {...rest}
     >

@@ -24,6 +24,7 @@ export const WEBSITE = {
 export const HAS_CURSOR = false
 export const HAS_TOTOP = false
 export const HAS_CALL2ACTION = false
+export const HAS_PRELOADER = true
 
 export const FILE_SIZE_LIMIT = 2
 export const FILES_COUNT_LIMIT = 10
