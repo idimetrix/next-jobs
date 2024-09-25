@@ -22,11 +22,11 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <section className="flex w-full flex-col gap-6">
-      <Headline title="Buttons">
-        Use button styles for actions in forms, dialogs, and more with support for multiple sizes, states, and more.
+      <Headline title="Breadcrumbs">
+        Indicate the current page’s location within a navigational hierarchy that automatically adds separators via CSS.
       </Headline>
 
-      <Card>Buttons</Card>
+      <Card>Breadcrumbs</Card>
     </section>
   )
 }

@@ -22,11 +22,9 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <section className="flex w-full flex-col gap-6">
-      <Headline title="Buttons">
-        Use button styles for actions in forms, dialogs, and more with support for multiple sizes, states, and more.
-      </Headline>
+      <Headline title="Badges">Documentation and examples for badges, our small count and labeling component.</Headline>
 
-      <Card>Buttons</Card>
+      <Card>Badges</Card>
     </section>
   )
 }

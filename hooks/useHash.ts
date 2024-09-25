@@ -1,6 +1,5 @@
 import { useState, useEffect, useCallback, useMemo } from "react"
-import {usePathname} from "next/navigation";
-
+import { usePathname } from "next/navigation"
 
 export const useHash = (): [string, (newHash?: string) => void] => {
   const pathname = usePathname()

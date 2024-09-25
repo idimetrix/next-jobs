@@ -21,23 +21,19 @@ const alert = tv({
   },
 })
 
-export interface AlertVariants extends VariantProps<typeof alert> {
+interface AlertVariants extends VariantProps<typeof alert> {
   hover?: boolean
   href?: string
   target?: HTMLAttributeAnchorTarget
-  // withIcon?: boolean
-  // withClose?: boolean
-}
-
-export interface AlertProps
-  extends Omit<HTMLAttributes<HTMLButtonElement | HTMLAnchorElement>, "variant">,
-      AlertVariants {
+  rounded?: boolean
   disabled?: boolean
   type?: "submit" | "reset" | "button" | undefined
 }
 
+export interface AlertProps extends HTMLAttributes<HTMLButtonElement | HTMLAnchorElement>, AlertVariants {}
+
 export const Alert = forwardRef<HTMLAnchorElement | HTMLButtonElement, AlertProps>(function Alert(
-  { hover, href, target, variant = "primary", className, children, disabled, type, ...rest }: AlertProps,
+  { hover, href, target, rounded, variant = "primary", className, children, disabled, type, ...rest }: AlertProps,
   ref
 ) {
   return href ? (
@@ -45,7 +41,7 @@ export const Alert = forwardRef<HTMLAnchorElement | HTMLButtonElement, AlertProp
       ref={ref as ForwardedRef<HTMLAnchorElement>}
       href={href}
       target={target}
-      className={cn("", alert({ variant }), className)}
+      className={cn("relative", alert({ variant }), rounded && "rounded-full", className)}
       {...rest}
     >
       {children}
@@ -55,7 +51,7 @@ export const Alert = forwardRef<HTMLAnchorElement | HTMLButtonElement, AlertProp
       type={type}
       ref={ref as ForwardedRef<HTMLButtonElement>}
       disabled={disabled}
-      className={cn("", alert({ variant }), className)}
+      className={cn("relative", alert({ variant }), rounded && "rounded-full", className)}
       {...rest}
     >
       {children}

@@ -34,7 +34,9 @@ export const AnimatedNumber: FC<Props> = ({
 
   const animationString = comma ? Math.abs(value).toLocaleString(locale || "en-US") : String(Math.abs(value))
 
-  const valuesArr = Array.from(animationString, Number).map((x, idx) => (isNaN(x) ? animationString[idx] : x))
+  const valuesArr: (number | string)[] = Array.from(animationString, Number).map((x, idx) =>
+    isNaN(x) ? animationString[idx] : x
+  ) as (number | string)[]
 
   const [numberHeight, setNumberHeight] = useState(0)
 
@@ -88,7 +90,7 @@ export const AnimatedNumber: FC<Props> = ({
                   transform: "translateY(0px)",
                 }}
                 to={{
-                  transform: `translateY(${-1 * (numberHeight * +valuesArr[index]) - numberHeight * 20})`,
+                  transform: `translateY(${-1 * (numberHeight * +(valuesArr[index] || 0)) - numberHeight * 20})`,
                 }}
                 config={setConfig(configs, n, index)}
               >

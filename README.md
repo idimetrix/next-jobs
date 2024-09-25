@@ -12,3 +12,6 @@ https://javisperez.github.io/tailwindcolorshades/
 
 https://colornamer.robertcooper.me/
 
+## Fontawesome
+
+https://fontawesome.com/search?q=

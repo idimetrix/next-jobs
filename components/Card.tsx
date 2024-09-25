@@ -15,9 +15,17 @@ export const Card: FC<Props> = ({ header, footer, className, children, ...rest }
       )}
       {...rest}
     >
-      {header && <div className={cn("border-b border-secondary-700/10 font-semibold p-6 dark:border-secondary-700")}>{header}</div>}
+      {header && (
+        <div className={cn("border-b border-secondary-700/10 p-6 font-semibold dark:border-secondary-700")}>
+          {header}
+        </div>
+      )}
       <div className="p-6"> {children}</div>
-      {footer && <div className={cn("border-t border-secondary-700/10 font-semibold p-6 dark:border-secondary-700")}>{footer}</div>}
+      {footer && (
+        <div className={cn("border-t border-secondary-700/10 p-6 font-semibold dark:border-secondary-700")}>
+          {footer}
+        </div>
+      )}
     </div>
   )
 }

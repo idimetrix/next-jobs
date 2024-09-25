@@ -22,11 +22,7 @@ export const Anchor = ({ active, className, href, children, ...rest }: Props) =>
   }, [href, hash, pathname])
 
   return (
-    <Link
-      href={href}
-      className={cn("transition-all duration-300", className, value && active)}
-      {...rest}
-    >
+    <Link href={href} className={cn("transition-all duration-300", className, value && active)} {...rest}>
       {children}
     </Link>
   )
