@@ -1,6 +1,6 @@
-"use client";
+"use client"
 
-import {HTMLAttributes, useEffect, useState} from "react"
+import { HTMLAttributes, useEffect, useState } from "react"
 import { cn } from "../utils"
 
 interface Props extends HTMLAttributes<HTMLDivElement> {
@@ -8,7 +8,7 @@ interface Props extends HTMLAttributes<HTMLDivElement> {
 }
 
 export function Preloader({ nonce, className, ...rest }: Props) {
-  const [loaded, setLoaded] = useState(false);
+  const [loaded, setLoaded] = useState(false)
 
   // const router = useRouter();
   //
@@ -75,8 +75,8 @@ export function Preloader({ nonce, className, ...rest }: Props) {
   // }, [])
 
   useEffect(() => {
-    setLoaded(true);
-  }, []);
+    setLoaded(true)
+  }, [])
 
   return (
     <div

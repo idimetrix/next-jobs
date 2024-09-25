@@ -1,4 +1,4 @@
-"use client";
+"use client"
 
 import { faTriangle } from "@fortawesome/pro-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"

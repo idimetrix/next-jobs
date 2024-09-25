@@ -1,4 +1,4 @@
-"use client";
+"use client"
 
 import { SignInButton } from "@clerk/nextjs"
 import { faUnlock } from "@fortawesome/pro-regular-svg-icons"
@@ -29,7 +29,7 @@ export const Call2Action: FC<Props> = ({ className, ...rest }: Props) => {
         aria-label="Hire Top 1% Talent"
         className={cn(
           "fixed bottom-0 right-0 z-10 flex cursor-pointer items-center justify-center gap-2 overflow-hidden",
-          "bg-blue-500 text-ellipsis whitespace-nowrap rounded-tl-lg rounded-tr-lg px-2 py-2 text-center text-sm xs:px-6",
+          "text-ellipsis whitespace-nowrap rounded-tl-lg rounded-tr-lg bg-blue-500 px-2 py-2 text-center text-sm xs:px-6",
           "transition-all duration-300 ease-in-out xs:right-[86px] xs:text-base",
           className
         )}

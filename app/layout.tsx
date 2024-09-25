@@ -1,14 +1,14 @@
 import { Inter } from "next/font/google"
 import { ReactNode } from "react"
+import { Preloader } from "../components/Preloader"
 import { ThemeProvider } from "../providers/theme"
 import { cn } from "../utils"
 import "styles/styles.css"
-import {HAS_CALL2ACTION, HAS_CURSOR, HAS_PRELOADER, HAS_TOTOP} from "../constants";
-import {Cursor} from "../components/Cursor";
-import {ToTop} from "../components/ToTop";
-import {Call2Action} from "../components/Call2Action";
-import { ClerkProvider } from '@clerk/nextjs'
-import {Preloader} from "../components/Preloader";
+import { HAS_CALL2ACTION, HAS_CURSOR, HAS_PRELOADER, HAS_TOTOP } from "../constants"
+import { Cursor } from "../components/Cursor"
+import { ToTop } from "../components/ToTop"
+import { Call2Action } from "../components/Call2Action"
+import { ClerkProvider } from "@clerk/nextjs"
 // import {usePathname} from "next/navigation";
 
 const font = Inter({
@@ -21,7 +21,7 @@ const font = Inter({
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   // const pathname = usePathname()
-  
+
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={cn(font.className, "group/page relative min-h-screen", "flex w-full flex-col")}>

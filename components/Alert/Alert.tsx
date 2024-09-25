@@ -1,7 +1,7 @@
 import Link from "next/link"
 import { ForwardedRef, forwardRef, HTMLAttributeAnchorTarget, HTMLAttributes } from "react"
 import { tv, VariantProps } from "tailwind-variants"
-import { cn } from "../utils"
+import { cn } from "../../utils"
 
 const alert = tv({
   base: "border-opacity-20 px-5 py-3 border bg-opacity-20 rounded-lg",
@@ -38,6 +38,7 @@ export const Alert = forwardRef<HTMLAnchorElement | HTMLButtonElement, AlertProp
 ) {
   return href ? (
     <Link
+      role="alert"
       ref={ref as ForwardedRef<HTMLAnchorElement>}
       href={href}
       target={target}
@@ -48,6 +49,7 @@ export const Alert = forwardRef<HTMLAnchorElement | HTMLButtonElement, AlertProp
     </Link>
   ) : (
     <button
+      role="alert"
       type={type}
       ref={ref as ForwardedRef<HTMLButtonElement>}
       disabled={disabled}
