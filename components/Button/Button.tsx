@@ -1,4 +1,5 @@
 import { cva, type VariantProps } from "class-variance-authority"
+import { ButtonHTMLAttributes } from "react"
 import { cn } from "../../utils"
 
 const button = cva(
@@ -32,7 +33,7 @@ const button = cva(
   }
 )
 
-export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLAnchorElement>, VariantProps<typeof button> {
+export interface ButtonProps extends ButtonHTMLAttributes<HTMLAnchorElement>, VariantProps<typeof button> {
   underline?: boolean
   href: string
 }

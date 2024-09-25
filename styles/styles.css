@@ -6,31 +6,21 @@
     --color-black: #000000;
     --color-white: #ffffff;
 
-    --color-golden-hour: #f2b457;
-    --color-black-wash: #0b0c0f;
-    --color-hooloovoo-blue: #3656ff;
-    --color-nila-blue: #0057ff;
-    --color-lanse-blue: #5249ff;
-    --color-blustering-blue: #3818fc;
-    --color-blue-genie: #6b6bfd;
-    --color-dark-void: #131417;
-    --color-trance: #9097a6;
-    --color-charade: #3b3f45;
-    --color-calla-lily: #E4E8ED;
-    --color-ruined-smores: #0F1114;
-    --color-midnight-magic: #47474a;
-    --color-satin-white: #ced3db;
-    --color-fever: #ed4a4a;
+    /* Your default theme */
+    --background: white;
+    --foreground: black;
+}
+
+[data-theme='dark'] {
+
 }
 
 html, body {
     /* Hide scrollbar for IE, Edge and Firefox */
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
-    background-color: var(--color-black-wash);
-    color: var(--color-white);
-    font-size: 16px;
-    line-height: 1.5;
+    /*font-size: 16px;*/
+    /*line-height: 1.5;*/
     -webkit-text-size-adjust: 100%;
     -webkit-tap-highlight-color: transparent;
     position: relative;
@@ -47,6 +37,20 @@ html, body {
     tab-size: 4;
     font-feature-settings: normal;
     font-variation-settings: normal;
+}
+
+body{
+    --tw-bg-opacity: 1;
+    background-color: rgb(248 249 250 / var(--tw-bg-opacity));
+    --tw-text-opacity: 1;
+    color: rgb(19 25 32 / var(--tw-text-opacity));
+}
+
+html.dark body {
+    --tw-bg-opacity: 1;
+    background-color: rgb(19 25 32 / var(--tw-bg-opacity));
+    --tw-text-opacity: 1;
+    color: rgb(191 191 191 / var(--tw-text-opacity));
 }
 
 body::-webkit-scrollbar {

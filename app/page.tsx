@@ -17,6 +17,6 @@ export const metadata: Metadata = {
   },
 }
 
-export default function Web() {
+export default function Page() {
   return <section className="">123</section>
 }

@@ -1,19 +1,25 @@
-import { Montserrat } from "next/font/google"
+import { Inter } from "next/font/google"
+import { ReactNode } from "react"
+import { ThemeProvider } from "../providers/theme"
 import { cn } from "../utils"
-import "styles/tailwind.css"
+import "styles/styles.css"
 
-const font = Montserrat({
-  weight: ["400", "500", "600", "700"],
+const font = Inter({
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
   style: "normal",
   subsets: ["latin"],
   display: "block",
   variable: "--font-inter",
 })
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
-      <body className={cn(font.className, "")}>{children}</body>
+    <html lang="en" suppressHydrationWarning>
+      <body className={cn(font.className, "")}>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   )
 }
