@@ -1,22 +1,17 @@
 import type { Meta, StoryObj } from "@storybook/react"
-import { Button } from "./Button"
+import { BUTTON_VARIANTS } from "../../enums"
+import { Button } from "."
 
 const meta: Meta<typeof Button> = {
   title: "Button",
   component: Button,
   args: {
-    intent: "primary",
-    underline: false,
+    variant: "primary",
     children: "Button",
-    size: "lg",
   },
   argTypes: {
-    intent: {
-      options: ["primary", "secondary"],
-      control: { type: "select" },
-    },
-    size: {
-      options: ["sm", "lg"],
+    variant: {
+      options: Object.values(BUTTON_VARIANTS),
       control: { type: "select" },
     },
   },

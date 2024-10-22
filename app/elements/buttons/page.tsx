@@ -1,6 +1,8 @@
 import { Metadata } from "next"
+import { Button } from "../../../components/Button"
 import { Card } from "../../../components/Card"
 import { Headline } from "../../../elements/Headline"
+import { BUTTON_VARIANTS } from "../../../enums"
 
 export const metadata: Metadata = {
   title: "",
@@ -26,7 +28,40 @@ export default function Page() {
         Use button styles for actions in forms, dialogs, and more with support for multiple sizes, states, and more.
       </Headline>
 
-      <Card>Buttons</Card>
+      <div className="flex gap-6">
+        <Card header="Default">
+          <div className="flex flex-wrap gap-3">
+            {Object.entries(BUTTON_VARIANTS).map(([key, value]) => (
+              <Button className="text-sm capitalize" key={key} variant={value}>
+                {value}
+              </Button>
+            ))}
+
+            <Button className="w-full text-sm" variant="primary">
+              Block Level Button
+            </Button>
+          </div>
+        </Card>
+        <Card header="Light">
+          <div className="flex flex-wrap gap-3">
+            {Object.entries(BUTTON_VARIANTS).map(([key, value]) => (
+              <Button dark={false} className="text-sm capitalize" key={key} variant={value}>
+                {value}
+              </Button>
+            ))}
+          </div>
+        </Card>
+      </div>
+
+      <Card header="Outline">
+        <div className="flex flex-wrap gap-3">
+          {Object.entries(BUTTON_VARIANTS).map(([key, value]) => (
+            <Button className="text-sm capitalize" key={key} variant={value} outline>
+              {value}
+            </Button>
+          ))}
+        </div>
+      </Card>
     </section>
   )
 }

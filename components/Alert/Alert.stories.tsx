@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react"
-import { VARIANTS } from "../../enums"
+import { BUTTON_VARIANTS } from "../../enums"
 import { Alert } from "."
 
 const meta: Meta<typeof Alert> = {
@@ -11,7 +11,7 @@ const meta: Meta<typeof Alert> = {
   },
   argTypes: {
     variant: {
-      options: Object.values(VARIANTS),
+      options: Object.values(BUTTON_VARIANTS),
       control: { type: "select" },
     },
   },

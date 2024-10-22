@@ -1,47 +1,59 @@
-import { cva, type VariantProps } from "class-variance-authority"
-import { ButtonHTMLAttributes } from "react"
+import Link from "next/link"
+import { ForwardedRef, forwardRef, HTMLAttributeAnchorTarget, HTMLAttributes } from "react"
+import { VariantProps } from "tailwind-variants"
+import { ButtonTheme } from "./theme"
 import { cn } from "../../utils"
 
-const button = cva(
-  [
-    "justify-center",
-    "inline-flex",
-    "items-center",
-    "rounded-xl",
-    "text-center",
-    "border",
-    "border-blue-400",
-    "transition-colors",
-    "delay-50",
-  ],
+export interface ButtonVariants extends VariantProps<typeof ButtonTheme> {}
+
+export interface ButtonProps extends HTMLAttributes<HTMLButtonElement | HTMLAnchorElement>, ButtonVariants {
+  hover?: boolean
+  href?: string
+  target?: HTMLAttributeAnchorTarget
+  rounded?: boolean
+  outline?: boolean
+  disabled?: boolean
+  type?: "submit" | "reset" | "button" | undefined
+}
+
+export const Button = forwardRef<HTMLAnchorElement | HTMLButtonElement, ButtonProps>(function Button(
   {
-    variants: {
-      intent: {
-        primary: ["bg-blue-400", "text-white", "hover:enabled:bg-blue-700"],
-        secondary: ["bg-transparent", "text-blue-400", "hover:enabled:bg-blue-400", "hover:enabled:text-white"],
-      },
-      size: {
-        sm: ["min-w-20", "h-full", "min-h-10", "text-sm", "py-1.5", "px-4"],
-        lg: ["min-w-32", "h-full", "min-h-12", "text-lg", "py-2.5", "px-6"],
-      },
-      underline: { true: ["underline"], false: [] },
-    },
-    defaultVariants: {
-      intent: "primary",
-      size: "lg",
-    },
-  }
-)
-
-export interface ButtonProps extends ButtonHTMLAttributes<HTMLAnchorElement>, VariantProps<typeof button> {
-  underline?: boolean
-  href: string
-}
-
-export function Button({ className, intent, size, underline, ...props }: ButtonProps) {
-  return (
-    <a className={cn(button({ intent, size, className, underline }))} {...props}>
-      {props.children}
-    </a>
+    hover,
+    href,
+    target,
+    rounded,
+    outline,
+    variant = "primary",
+    dark = true,
+    className,
+    children,
+    disabled,
+    type,
+    ...rest
+  }: ButtonProps,
+  ref
+) {
+  return href ? (
+    <Link
+      role="alert"
+      ref={ref as ForwardedRef<HTMLAnchorElement>}
+      href={href}
+      target={target}
+      className={cn("relative", ButtonTheme({ variant, dark, outline }), rounded && "rounded-full", className)}
+      {...rest}
+    >
+      {children}
+    </Link>
+  ) : (
+    <button
+      role="alert"
+      type={type}
+      ref={ref as ForwardedRef<HTMLButtonElement>}
+      disabled={disabled}
+      className={cn("relative", ButtonTheme({ variant, dark, outline }), rounded && "rounded-full", className)}
+      {...rest}
+    >
+      {children}
+    </button>
   )
-}
+})

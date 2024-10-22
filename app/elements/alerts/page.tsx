@@ -15,7 +15,7 @@ import { useCallback } from "react"
 import { Alert } from "../../../components/Alert"
 import { Card } from "../../../components/Card"
 import { Headline } from "../../../elements/Headline"
-import { VARIANTS } from "../../../enums"
+import { ALERT_VARIANTS } from "../../../enums"
 
 export const metadata: Metadata = {
   title: "",
@@ -34,14 +34,14 @@ export const metadata: Metadata = {
   },
 }
 
-const Icons: Record<VARIANTS, IconProp> = {
-  [VARIANTS.PRIMARY]: faCheck,
-  [VARIANTS.SECONDARY]: faCheck,
-  [VARIANTS.SUCCESS]: faCircleCheck,
-  [VARIANTS.DANGER]: faCircleExclamation,
-  [VARIANTS.WARNING]: faTriangleExclamation,
-  [VARIANTS.INFO]: faCircleInfo,
-  [VARIANTS.DARK]: faBell,
+const Icons: Record<ALERT_VARIANTS, IconProp> = {
+  [ALERT_VARIANTS.PRIMARY]: faCheck,
+  [ALERT_VARIANTS.SECONDARY]: faCheck,
+  [ALERT_VARIANTS.SUCCESS]: faCircleCheck,
+  [ALERT_VARIANTS.DANGER]: faCircleExclamation,
+  [ALERT_VARIANTS.WARNING]: faTriangleExclamation,
+  [ALERT_VARIANTS.INFO]: faCircleInfo,
+  [ALERT_VARIANTS.DARK]: faBell,
 }
 
 export default function Page() {
@@ -56,7 +56,7 @@ export default function Page() {
 
       <Card header="Basic Alerts">
         <div className="flex flex-col gap-3">
-          {Object.entries(VARIANTS).map(([key, value]) => (
+          {Object.entries(ALERT_VARIANTS).map(([key, value]) => (
             <Alert className="text-left text-sm" key={key} variant={value}>
               A simple {value} alert — check it out!
             </Alert>
@@ -67,7 +67,7 @@ export default function Page() {
       <div className="flex gap-6">
         <Card header="Link Alerts">
           <div className="flex flex-col gap-3">
-            {Object.entries(VARIANTS).map(([key, value]) => (
+            {Object.entries(ALERT_VARIANTS).map(([key, value]) => (
               <Alert className="text-left text-sm" key={key} variant={value}>
                 A simple primary alert with{" "}
                 <Link className="font-bold hover:underline" href="#">
@@ -81,7 +81,7 @@ export default function Page() {
 
         <Card header="Dismissing">
           <div className="flex flex-col gap-3">
-            {Object.entries(VARIANTS).map(([key, value]) => (
+            {Object.entries(ALERT_VARIANTS).map(([key, value]) => (
               <Alert className="pr-10 text-left text-sm" key={key} variant={value}>
                 You should check in on some of those fields below.
                 <button className="absolute right-2 top-2 flex size-7 items-center justify-center rounded bg-transparent bg-opacity-10 text-inherit hover:bg-inherit">
@@ -108,7 +108,7 @@ export default function Page() {
 
         <Card header="Icons">
           <div className="flex flex-col gap-3">
-            {Object.entries(VARIANTS).map(([key, value]) => (
+            {Object.entries(ALERT_VARIANTS).map(([key, value]) => (
               <Alert className="flex items-center gap-1.5 text-left text-sm" key={key} variant={value}>
                 <FontAwesomeIcon icon={Icons[value]} className="size-6" /> An example {value} with an icon
               </Alert>

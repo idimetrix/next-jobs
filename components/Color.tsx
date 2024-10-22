@@ -1,3 +1,5 @@
+"use client"
+
 import { FC, HTMLAttributes, useCallback } from "react"
 import { cn } from "../utils"
 

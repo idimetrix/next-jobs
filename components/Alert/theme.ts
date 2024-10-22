@@ -1,7 +1,7 @@
 import { tv } from "tailwind-variants"
 
 export const AlertTheme = tv({
-  base: "border-opacity-20 px-5 py-3 border bg-opacity-20 rounded-lg",
+  base: "border-opacity-20 px-5 py-3 transition-all border bg-opacity-20 rounded-lg",
   variants: {
     variant: {
       primary: "text-primary-800 bg-primary-500 border-primary-500",
@@ -10,7 +10,9 @@ export const AlertTheme = tv({
       danger: "text-danger-800 bg-danger-500 border-danger-500",
       warning: "text-warning-800 bg-warning-500 border-warning-500",
       info: "text-info-800 bg-info-500 border-info-500",
+      light: "",
       dark: "text-dark-800 dark:text-dark-200 bg-dark-500 border-dark-500",
+      link: "",
     },
   },
   defaultVariants: {

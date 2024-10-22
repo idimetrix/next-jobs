@@ -1,4 +1,4 @@
-import { Inter } from "next/font/google"
+import { Montserrat } from "next/font/google"
 import { ReactNode } from "react"
 import { Preloader } from "../components/Preloader"
 import { ThemeProvider } from "../providers/theme"
@@ -11,7 +11,7 @@ import { Call2Action } from "../components/Call2Action"
 import { ClerkProvider } from "@clerk/nextjs"
 // import {usePathname} from "next/navigation";
 
-const font = Inter({
+const font = Montserrat({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
   style: "normal",
   subsets: ["latin"],
